@@ -1575,20 +1575,37 @@
         // Product card click
 document.querySelectorAll(".achat").forEach(btn => {
   btn.addEventListener("click", () => {
-    const card = btn.parentElement; // Le parent de la carte
-    const nom = card.querySelector("h3").innerText;
-    const img = card.querySelector("img").getAttribute("src");
+    // Remonter à la carte produit
+    const card = btn.closest(".product-card");
+    if (!card) return;
 
-    // Construire URL complète de l’image
-    const imageUrl = window.location.origin + "/" + img;
+    // Récupérer le nom du produit
+    const nomElement = card.querySelector(".product-title");
+    const nom = nomElement ? nomElement.innerText : "Produit";
 
-    const message = `Je veux acheter cet article : *${nom}* 🛍️`;
-    const numero = "22951212249"; // Ton numéro WhatsApp
+    // Récupérer l'image
+    const imgElement = card.querySelector(".product-image img");
+    if (!imgElement) {
+      alert("Image du produit introuvable !");
+      return;
+    }
 
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(message + "\n" + imageUrl)}`;
+    // Construire l'URL complète (important pour WhatsApp)
+    const imgSrc = imgElement.getAttribute("src");
+    const imageUrl = window.location.origin + "/" + imgSrc;
+
+    // Message WhatsApp
+    const message = `Je veux acheter cet article : *${nom}* 🛍️\n${imageUrl}`;
+
+    // Ton numéro WhatsApp (format international)
+    const numero = "22951212249";
+
+    // Lien WhatsApp
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   });
 });
+
 
     </script>
 
