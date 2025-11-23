@@ -1573,19 +1573,23 @@
         });
 
         // Product card click
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('click', function () {
-                gsap.to(this, {
-                    scale: 0.98,
-                    duration: 0.1,
-                    yoyo: true,
-                    repeat: 1,
-                    onComplete: () => {
-                        alert('Redirection vers la page produit (à implémenter)');
-                    }
-                });
-            });
-        });
+document.querySelectorAll(".achat").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const card = btn.parentElement; // Le parent de la carte
+    const nom = card.querySelector("h3").innerText;
+    const img = card.querySelector("img").getAttribute("src");
+
+    // Construire URL complète de l’image
+    const imageUrl = window.location.origin + "/" + img;
+
+    const message = `Je veux acheter cet article : *${nom}* 🛍️`;
+    const numero = "22951212249"; // Ton numéro WhatsApp
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(message + "\n" + imageUrl)}`;
+    window.open(url, "_blank");
+  });
+});
+
     </script>
 
 </body>
