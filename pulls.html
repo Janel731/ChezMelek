@@ -912,20 +912,7 @@
             });
         });
         
-        // Newsletter form
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            gsap.to('.newsletter-btn', {
-                scale: 0.95,
-                duration: 0.1,
-                yoyo: true,
-                repeat: 1,
-                onComplete: () => {
-                    alert('Merci pour votre inscription ! Vérifiez votre email pour le code promo.');
-                    this.reset();
-                }
-            });
-        });
+
         
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
