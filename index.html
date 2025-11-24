@@ -138,6 +138,29 @@
             overflow-x: hidden;
         }
 
+     html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+     .container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+}
+
+
         h1,
         h2,
         h3,
@@ -157,6 +180,9 @@
             top: 0;
             z-index: 1000;
         }
+.navbar-nav {
+  flex-wrap: wrap;
+}
 
         .navbar-brand {
             font-family: 'Playfair Display', serif;
@@ -170,10 +196,10 @@
             color: var(--text-dark) !important;
             font-weight: 500;
             margin: 0 1rem;
+         white-space: nowrap;
             position: relative;
             transition: color 0.3s;
         }
-
         .nav-link:hover {
             color: var(--secondary-color) !important;
         }
@@ -220,6 +246,14 @@
             margin-bottom: 2.5rem;
             opacity: 0;
         }
+
+
+        .hero img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+      }
+
 
         .btn-primary-custom {
             background: var(--secondary-color);
@@ -319,6 +353,8 @@
         }
 
         .product-card {
+            max-width: 100%;
+            width: 100%;
             background: white;
             border-radius: 15px;
             overflow: hidden;
