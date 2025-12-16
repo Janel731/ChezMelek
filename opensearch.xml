@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  
+  <!-- Nom du moteur de recherche -->
+  <ShortName>ChezMelek</ShortName>
+  
+  <!-- Description -->
+  <Description>Rechercher des vêtements, pantalons, pulls et plus sur ChezMelek</Description>
+  
+  <!-- URL pour effectuer la recherche -->
+  <Url type="text/html" template="https://chez-melek.vercel.app/recherche?q={searchTerms}"/>
+  
+  <!-- Optionnel : URL pour l’icône du moteur -->
+  <Image height="16" width="16" type="image/x-icon">https://chez-melek.vercel.app/favicon-16x16.png</Image>
+  
+  <!-- Langue du site -->
+  <Language>fr-FR</Language>
+  
+  <!-- Format de réponse (HTML ici) -->
+  <InputEncoding>UTF-8</InputEncoding>
+  <OutputEncoding>UTF-8</OutputEncoding>
+
+</OpenSearchDescription>
