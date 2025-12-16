@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Découvrez notre collection exclusive de , pantalons et vêtements de qualité. Mode élégante et tendance pour tous les styles.">
+    <meta name="keywords" content="pantalons, vêtements, mode, fashion, boutique, élégant, tendance">
+    <meta name="author" content="Chez Melek">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chez Melek | Chemises, T-shirts & Pantalons Élégants">
+    <meta property="og:description" content="Collection exclusive de mode élégante">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/ico.webp">
+
+    <title>Chez Melek | Pantalons Élégants</title>
+    <!-- favicon -->
+    <!-- favicon classique -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <!--pour Apple  -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- android/chrome -->
+    <link rel="manifest" href="/site.webmanifest">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet">  
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --primary-color: #222222;
+            --secondary-color: #ff7a00;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+
+        /* Navbar - Same as sacs.html */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color) !important;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            margin: 0 1rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Page Header */
+        .page-header {
+            height: 50vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/img/PtlImg/bg1.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            opacity: 0;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0;
+        }
+
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .breadcrumb-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: white;
+        }
+
+        /* Filters Section */
+        .filters-section {
+            background: white;
+            padding: 30px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .filter-group {
+            margin-bottom: 20px;
+        }
+
+        .filter-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        .sort-select {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            font-size: 0.95rem;
+        }
+
+        .sort-select:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-image {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+            background: var(--bg-light);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .product-badge.sale {
+            background: #e74c3c;
+        }
+
+        .product-badge.new {
+            background: #27ae60;
+        }
+
+        .size-guide {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+            opacity: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
+        }
+
+        .product-card:hover .size-guide {
+            bottom: 20px;
+            opacity: 1;
+        }
+
+        .wishlist-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            transition: all 0.3s;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .wishlist-btn:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-category {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .product-rating {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .product-rating i {
+            font-size: 0.9rem;
+        }
+
+        .rating-count {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-left: 5px;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .current-price {
+            font-size: 1.6rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .old-price {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+
+        .product-sizes {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .size-option {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .size-option:hover {
+            border-color: var(--secondary-color);
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111111;
+            color: #f1f1f1;
+            padding-top: 3rem;
+        }
+
+        footer a {
+            color: #f1f1f1;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        footer a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .achat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            left: 120px;
+            border-radius: 999px;
+            padding: 0.6rem 1.4rem;
+            border: 1.5px solid var(--secondary-color);
+            color: var(--secondary-color);
+            font-weight: 500;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+
+        .achat:hover {
+            background: rgba(255, 122, 0, 0.06);
+            color: #1a1a1a;
+            border: none;
+        }
+
+        .achat i {
+            transform: rotate(-20deg);
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+
+            .filter-options {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: var(--secondary-color);">Chez Melek</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link " href="vetement.html">Vêtements</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="pantalon.html">Pantalons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pulls.html">Pulls</a></li>
+                    <li class="nav-item"><a class="nav-link" href="accessoires.html">Espace style</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/public/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Collection Pantalons</h1>
+            <p>Confort et élégance pour tous les styles</p>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="/index.html" style="color: var(--secondary-color);">Accueil</a></li>
+                    <li class="breadcrumb-item active">Pantalons</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="filter-group">
+                        <div class="filter-title">Type</div>
+                        <div class="filter-options">
+                            <button class="filter-btn active" data-filter="all">Tous</button>
+                            <button class="filter-btn" data-filter="baggy">Baggy</button>
+                            <button class="filter-btn" data-filter="joggings">joggings</button>
+                            <button class="filter-btn" data-filter="pantalon">Pantalon tailleur</button>
+                            <button class="filter-btn" data-filter="cargo">Cargo</button>
+                            <button class="filter-btn" data-filter="jort">Jort</button>
+                            <button class="filter-btn" data-filter="jean">Jean</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="row">
+                <!--joggins -->
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="joggings">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jogg1.webp" alt="Pantalon Jogging">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jogging</div>
+                            <h3 class="product-title">Jogging</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="joggings">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jogg2.webp" alt="Jean droit noir classique" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jogging</div>
+                            <h3 class="product-title" itemprop="name">Jogging</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="joggings">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jogg3.webp" alt="Pantalon costume bleu marine" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jogging</div>
+                            <h3 class="product-title" itemprop="name">Jogging</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="joggings">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jogg4.webp" alt="Pantalon costume bleu marine" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jogging</div>
+                            <h3 class="product-title" itemprop="name">Jogging</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="joggings">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jogg5.webp" alt="Pantalon costume bleu marine" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jogging</div>
+                            <h3 class="product-title" itemprop="name">Jogging</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- cargo -->
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="cargo">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/cargo1.webp" alt="Pantalon cargo" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Cargo</div>
+                            <h3 class="product-title" itemprop="name">Pantalon Cargo</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="cargo">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/cargo2.webp" alt="Chino olive moderne" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Cargo</div>
+                            <h3 class="product-title" itemprop="name">Pantalon Cargo</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="cargo">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/cargo3.webp" alt="Pantalon costume bleu marine" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Cargo</div>
+                            <h3 class="product-title" itemprop="name">Pantalon Cargo</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="cargo">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/cargo4.webp" alt="Chino olive moderne" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Cargo</div>
+                            <h3 class="product-title" itemprop="name">Pantalon Cargo</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+                            </div>
+
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="cargo">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/cargo5.webp" alt="Chino olive moderne">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Cargo</div>
+                            <h3 class="product-title" itemprop="name">Pantalon Cargo</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- Baggy -->
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="baggy">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/bg1.webp" alt="Baggy" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Baggy</div>
+                            <h3 class="product-title" itemprop="name">Baggy</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+                            </div>
+
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="baggy">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/bg2.webp" alt="Chino olive moderne" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Baggy</div>
+                            <h3 class="product-title" itemprop="name">Baggy</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+                            </div>
+
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="baggy">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/bg3.webp" alt="Chino olive moderne" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Baggy</div>
+                            <h3 class="product-title" itemprop="name">Baggy</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+                            </div>
+
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="baggy">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/bg4.webp" alt="Chino olive moderne" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Baggy</div>
+                            <h3 class="product-title" itemprop="name">Baggy</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+                            </div>
+
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="baggy">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/bg5.webp" alt="Chino olive moderne" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Baggy</div>
+                            <h3 class="product-title" itemprop="name">Baggy</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">À partir de 4000F</span>
+                            </div>
+
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- jeans -->
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="jean">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jn1.webp">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jeans</div>
+                            <h3 class="product-title">Jean neuf</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">À partir de 12000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="jean">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jn2.webp">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jeans</div>
+                            <h3 class="product-title">Jean neuf</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">À partir de 12000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="jean">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jn3.webp">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jeans</div>
+                            <h3 class="product-title">Jean neuf</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">À partir de 12000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="jean">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jn4.webp">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jeans</div>
+                            <h3 class="product-title">Jean neuf</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">À partir de 12000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="jean">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jn5.webp">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jeans</div>
+                            <h3 class="product-title">Jean neuf</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">À partir de 12000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+                <!-- Pantalon -->
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="pantalon">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/ptl1.webp" alt="Pantalon" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Pantalon</div>
+                            <h3 class="product-title" itemprop="name">Pantalon tailleur</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">3000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="pantalon">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/ptl2.webp" alt="Pantalon costume bleu marine" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Pantalon</div>
+                            <h3 class="product-title" itemprop="name">Pantalon tailleur</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">3000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="pantalon">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/ptl3.webp" alt="Pantalon costume bleu marine" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Pantalon</div>
+                            <h3 class="product-title" itemprop="name">Pantalon tailleur</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">3000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="pantalon">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/ptl4.webp" alt="Pantalon costume bleu marine" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Pantalon</div>
+                            <h3 class="product-title" itemprop="name">Pantalon tailleur</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">3000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="pantalon">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/ptl5.webp" alt="Pantalon costume bleu marine" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Pantalon</div>
+                            <h3 class="product-title" itemprop="name">Pantalon tailleur</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                < </div>
+                                    <div class="product-price">
+                                        <span class="current-price" itemprop="price">3000F</span>
+
+                                    </div>
+                                    <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                            </div>
+                        </div>
+                </article>
+
+
+
+                <!-- jort -->
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="jort">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jt1.webp" alt="Jort" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jort</div>
+                            <h3 class="product-title" itemprop="name">Jort</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">7000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="jort">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jt2.webp" alt="Pantalon costume bleu marine" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jort</div>
+                            <h3 class="product-title" itemprop="name">Jort</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">7000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="jort">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jt3.webp" alt="Pantalon costume bleu marine" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jort</div>
+                            <h3 class="product-title" itemprop="name">Jort</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">7000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="jort">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jt4.webp" alt="Pantalon costume bleu marine" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jort</div>
+                            <h3 class="product-title" itemprop="name">Jort</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">7000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="product-card" data-category="jort">
+                        <div class="product-image">
+                            <img src="/img/PtlImg/jt5.webp" alt="Pantalon costume bleu marine" itemprop="image">
+
+                            <button class="wishlist-btn" aria-label="Ajouter aux favoris"><i
+                                    class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Jort</div>
+                            <h3 class="product-title" itemprop="name">Jort</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price" itemprop="price">7000F</span>
+
+                            </div>
+                            <button class="achat shadow"><i class="fas fa-cart-shopping"></i> Achetez</button>
+
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3">Chez Melek</h5>
+          <p class="mb-2" style="color: #ccc">
+            Boutique de vêtements moderne, élégante et accessible.
+          </p>
+          <p class="mb-0" style="color: #ccc">Téléphone : +229 63 65 69 25</p>
+        </div>
+       
+        <div class="col-md-4">
+          <h6 class="fw-semibold mb-3">Suivez-nous</h6>
+          <ul class="list-unstyled d-grid gap-2">
+            <li><a href="https://www.facebook.com/melek.degbedji19">Facebook</a></li>
+            <li><a href="https://www.tiktok.com/@melek.rxley">TikTok</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <h6 class="fw-semibold mb-3">Nous écrire</h6>
+          <ul class="list-unstyled d-grid gap-2">
+            <li><a href="https://wa.me/22963656925">WhatsApp</a></li>
+            <li><a href="public/contact.html#form-section">Envoyer un message</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <p class="mb-0">
+          © <span id="year"></span>Chez Melek. Tous droits réservés.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+
+    <!-- Scripts -->
+  <!-- Scripts -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+    <script>
+        // Register ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Page header animations
+        gsap.to('.page-header h1', {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            delay: 0.2,
+            ease: 'power3.out'
+        });
+
+
+
+
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const products = document.querySelectorAll('.product-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+
+                products.forEach(product => {
+                    const category = product.getAttribute('data-category');
+
+                    if (filter === 'all' || category === filter) {
+                        gsap.to(product.parentElement, {
+                            opacity: 1,
+                            scale: 1,
+                            duration: 0.5,
+                            display: 'block'
+                        });
+                    } else {
+                        gsap.to(product.parentElement, {
+                            opacity: 0,
+                            scale: 0.8,
+                            duration: 0.3,
+                            onComplete: () => {
+                                product.parentElement.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+        });
+
+        // Wishlist button functionality
+        document.querySelectorAll('.wishlist-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const icon = this.querySelector('i');
+
+                if (icon.classList.contains('far')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    gsap.from(icon, {
+                        scale: 0,
+                        rotation: 180,
+                        duration: 0.5,
+                        ease: 'back.out(2)'
+                    });
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                }
+            });
+        });
+
+        // Size selection
+        document.querySelectorAll('.size-option').forEach(size => {
+            size.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const parent = this.closest('.product-sizes');
+                parent.querySelectorAll('.size-option').forEach(s => {
+                    s.style.borderColor = '#e0e0e0';
+                    s.style.background = 'white';
+                    s.style.color = 'var(--text-dark)';
+                });
+
+                this.style.borderColor = 'var(--secondary-color)';
+                this.style.background = 'var(--secondary-color)';
+                this.style.color = 'white';
+
+                gsap.from(this, {
+                    scale: 0.8,
+                    duration: 0.3,
+                    ease: 'back.out(2)'
+                });
+            });
+        });
+
+
+
+        // Newsletter form
+
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.boxShadow = '0 5px 30px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Product card click
+        document.querySelectorAll(".achat").forEach(btn => {
+            btn.addEventListener("click", () => {
+                // Remonter à la carte produit
+                const card = btn.closest(".product-card");
+                if (!card) return;
+
+                // Récupérer le nom du produit
+                const nomElement = card.querySelector(".product-title");
+                const nom = nomElement ? nomElement.innerText : "Produit";
+
+                // Récupérer l'image
+                const imgElement = card.querySelector(".product-image img");
+                if (!imgElement) {
+                    alert("Image du produit introuvable !");
+                    return;
+                }
+
+                // Construire l'URL complète (important pour WhatsApp)
+                const imgSrc = imgElement.getAttribute("src");
+                const imageUrl = window.location.origin + "/" + imgSrc;
+
+                // Message WhatsApp
+                const message = `Je veux acheter cet article : *${nom}* 🛍️\n${imageUrl}`;
+
+                // Ton numéro WhatsApp (format international)
+                const numero = "22963656925";
+
+                // Lien WhatsApp
+                const url = `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
+                window.open(url, "_blank");
+            });
+        });
+
+
+    </script>
+
+</body>
+
+</html>
