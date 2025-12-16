@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Découvrez notre collection exclusive de , pantalons et vêtements de qualité. Mode élégante et tendance pour tous les styles.">
+    <meta name="keywords" content="pantalons, vêtements, mode, fashion, boutique, élégant, tendance">
+    <meta name="author" content="Chez Melek">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chez Melek |Nous contacter">
+    <meta property="og:description" content="Collection exclusive de mode élégante">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/ico.webp">
+
+    <title>Chez Melek |Nous contacter</title>
+ <!-- favicon -->
+    <!-- favicon classique -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <!--pour Apple  -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- android/chrome -->
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet">  
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+          :root {
+            --primary-color: #222222;
+            --secondary-color: #ff7a00;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+       
+        
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color) !important;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            margin: 0 1rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Page Header */
+        .page-header {
+            height: 40vh;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('i12.jpeg');
+            opacity: 0.3;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            opacity: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        
+        .breadcrumb-item a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: white;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .section-intro p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        /* Contact Cards */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .contact-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .contact-card:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .contact-card-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--secondary-color), #d4af6a);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 25px;
+            transition: all 0.3s;
+        }
+        
+        .contact-card:hover .contact-card-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+        
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .contact-card p {
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .contact-card a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .contact-card a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Form Section */
+        .form-section {
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+        
+        .form-section h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .form-section p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .form-label .required {
+            color: var(--error-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(201, 166, 99, 0.1);
+        }
+        
+        .form-control.error {
+            border-color: var(--error-color);
+        }
+        
+        .form-control.success {
+            border-color: var(--success-color);
+        }
+        
+        .error-message {
+            color: var(--error-color);
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .submit-btn {
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .submit-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(44, 62, 80, 0.3);
+        }
+        
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Info Section */
+        .info-section {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            height: 100%;
+        }
+        
+        .info-section h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .info-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+        
+        .info-content p {
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .info-content a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .info-content a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+        
+        .map-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            height: 500px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .faq-item {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--secondary-color);
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+        
+        .faq-question i {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+            color: var(--secondary-color);
+        }
+        
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            padding: 0 30px;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 0 30px 25px;
+        }
+        
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin: 0;
+        }
+       
+       /* FOOTER */
+        footer {
+            background: #111111;
+            color: #f1f1f1;
+            padding-top: 3rem;
+        }
+
+        footer a {
+            color: #f1f1f1;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        footer a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .form-section, .info-section {
+                padding: 30px;
+            }
+            
+            .social-buttons {
+                gap: 15px;
+            }
+            
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: var(--secondary-color);">Chez Melek</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item"><a class="nav-link" href="/index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/produits/vetement.html">Vêtements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/produits/pantalon.html">Pantalons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/produits/pulls.html">Pulls</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/produits/accessoires.html">Espace style</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Contactez-nous</h1>
+            <p>Nous sommes à votre écoute pour répondre à toutes vos questions</p>
+          
+        </div>
+    </header>
+
+    <!-- Contact Cards -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Comment pouvons-nous vous aider ?</h2>
+                <p>Nous sommes disponible du lundi au samedi de 09h à 19h. Choisissez le moyen de contact qui vous convient le mieux.</p>
+            </div>
+            
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Téléphone</h3>
+                    <p>Appelez-nous directement</p>
+                    <a href="tel:+22963656925">+229 63 65 69 25</a>
+                    <p style="margin-top: 15px; font-size: 0.9rem;">Lun-Sam: 09h-19h</p>
+                </div>
+                
+              
+                
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Boutique</h3>
+                    <p>Visitez-nous en personne</p>
+                    <a href="#map">Calavi<br>Benin</a>
+                
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Chat instantané</p>
+                    <a href="https://wa.me/22963656925" target="_blank">Discuter maintenant</a>
+                    <p style="margin-top: 15px; font-size: 0.9rem;">Réponse rapide</p>
+                </div>
+            </div>
+
+            <!-- Form & Info Row -->
+            <div class="row mt-5">
+                <div class="col-lg-7 mb-4">
+                    <div class="form-section" id="form-section">
+                        <h3>Envoyez-nous un message</h3>
+                        <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+                        
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Prénom <span class="required">*</span></label>
+                                        <input id="nom" type="text" class="form-control" id="firstName" placeholder="Votre prénom" required>
+                                        <span class="error-message">Veuillez entrer votre prénom</span>
+                                    </div>
+                                </div>
+                                
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Téléphone <span class="required">*</span></label>
+                                        <input id="num" type="tel" class="form-control" id="phone" placeholder="+229 00 00 00 00" required>
+                                        <span class="error-message">Veuillez entrer votre numéro</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <div class="form-group">
+                                <label class="form-label">Sujet <span class="required">*</span></label>
+                                <select class="form-control" id="subject" required>
+                                    <option value="">Sélectionnez un sujet</option>
+                                    <option value="commande">Question sur une commande</option>
+                                    <option value="produit">Information produit</option>
+                                    <option value="livraison">Livraison et retours</option>
+                                    <option value="partenariat">Partenariat</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                                <span class="error-message">Veuillez sélectionner un sujet</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Message <span class="required">*</span></label>
+                                <textarea class="form-control" id="message" placeholder="Votre message..." required></textarea>
+                                <span class="error-message">Veuillez entrer votre message</span>
+                            </div>
+                            
+                            <button  class="submit-btn" onclick="sendMessage(event)">
+                                <i class="fas fa-paper-plane"></i> Envoyer le message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-5">
+                    <div class="info-section">
+                        <h3>Informations Pratiques</h3>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Horaires d'ouverture</h4>
+                                <p><strong>Lundi - Samedi:</strong> 09h00 - 19h00<br>
+                                <strong>Dimanche:</strong> Fermé</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Livraison</h4>
+                                <p>Livraison d'achat<br>
+                                Expédition sous 24-48h<br>
+                                Retours gratuits sous 30 jours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Service Client</h4>
+                                <p>Nous répondons à vos préoccupations<br>
+                                Temps de réponse: &lt; 24h<br>
+                                <a href="https://wa.me/22963656925">Nous ecrire sur whatsapp</a></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+   
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq-section">
+        <div class="container">
+            <h2 class="">Questions Fréquentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Quels sont vos délais de livraison ?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Nous expédions toutes les commandes sous 24 à 48 heures ouvrées.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Puis-je retourner un article ?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Les retours d'articles ou changement ne sont généralement pas autorisés. Contactez nous pour plus d'infos.</p>
+                </div>
+            </div>
+            
+           
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Quels moyens de paiement acceptez-vous ?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Vous payer par paiement mobile(MTN, MOOV, CELTIIS).</p>
+               </div>
+            </div>
+            
+            
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Comment choisir la bonne taille ?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Ecrivez-nous pour avoir les informations nécessaires.<a href=""></a> </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+   <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3">Chez Melek</h5>
+          <p class="mb-2" style="color: #ccc">
+            Boutique de vêtements moderne, élégante et accessible.
+          </p>
+          <p class="mb-0" style="color: #ccc">Téléphone : +229 63 65 69 25</p>
+        </div>
+       
+        <div class="col-md-4">
+          <h6 class="fw-semibold mb-3">Suivez-nous</h6>
+          <ul class="list-unstyled d-grid gap-2">
+            <li><a href="https://www.facebook.com/melek.degbedji19">Facebook</a></li>
+            <li><a href="https://www.tiktok.com/@melek.rxley">TikTok</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <h6 class="fw-semibold mb-3">Nous écrire</h6>
+          <ul class="list-unstyled d-grid gap-2">
+            <li><a href="https://wa.me/22963656925">WhatsApp</a></li>
+            <li><a href="public/contact.html#form-section">Envoyer un message</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <p class="mb-0">
+          © <span id="year"></span>Chez Melek. Tous droits réservés.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Scripts -->
+  <!-- Scripts -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    
+    <script>
+        // Register ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Page header animations
+        gsap.to('.page-header h1', {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            delay: 0.2,
+            ease: 'power3.out'
+        });
+        
+       
+        
+        // Fade in animations
+    
+        
+        // Slide animations
+        gsap.from('.slide-in-left', {
+            scrollTrigger: {
+                trigger: '.slide-in-left',
+                start: 'top 80%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            x: -100,
+            duration: 1,
+            ease: 'power3.out'
+        });
+        
+        gsap.from('.slide-in-right', {
+            scrollTrigger: {
+                trigger: '.slide-in-right',
+                start: 'top 80%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            x: 100,
+            duration: 1,
+            ease: 'power3.out'
+        });
+        
+        // Contact cards animation
+        gsap.utils.toArray('.contact-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                y: 60,
+                scale: 0.9,
+                duration: 0.8,
+                delay: i * 0.15,
+                ease: 'power3.out'
+            });
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
+                
+                // Close all FAQs
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                });
+                
+                // Open clicked FAQ if it wasn't active
+                if (!isActive) {
+                    this.classList.add('active');
+                    answer.classList.add('active');
+                    
+                    gsap.from(answer.querySelector('p'), {
+                        opacity: 0,
+                        y: -20,
+                        duration: 0.5,
+                        ease: 'power2.out'
+                    });
+                }
+            });
+        });
+        
+      
+        
+       
+            
+        
+        
+        // Contact card click animations
+        document.querySelectorAll('.contact-card').forEach(card => {
+            card.addEventListener('click', function() {
+                gsap.to(this, {
+                    scale: 0.95,
+                    duration: 0.1,
+                    yoyo: true,
+                    repeat: 1
+                });
+            });
+        });
+        
+        // Social buttons hover effect
+        document.querySelectorAll('.social-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                gsap.to(this, {
+                    scale: 1.15,
+                    rotation: 5,
+                    duration: 0.3,
+                    ease: 'back.out(2)'
+                });
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                gsap.to(this, {
+                    scale: 1,
+                    rotation: 0,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+        });
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.boxShadow = '0 5px 30px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+        
+        // Info items animation
+        gsap.utils.toArray('.info-item').forEach((item, i) => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                x: 50,
+                duration: 0.8,
+                delay: i * 0.15,
+                ease: 'power3.out'
+            });
+        });
+        
+        // FAQ items animation
+        gsap.utils.toArray('.faq-item').forEach((item, i) => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                y: 30,
+                duration: 0.6,
+                delay: i * 0.1,
+                ease: 'power3.out'
+            });
+        });
+    </script>
+
+     <script>
+        let nom = document.getElementById("nom").value.trim()
+        let num = document.getElementById("num").value.trim()
+        let sujet= document.getElementById("subject").value.trim()       
+        let mess = document.getElementById("message").value.trim()
+                                      
+        function sendMessage(e){
+            e.preventDefault();
+
+            const receiveNumber = "22963656925"
+         
+            const message =`Bonjour je suis ${nom}. Je vous écrire pour ${sujet}.${mess}.
+Numero du client:${num}`
+
+            const url = `https://wa.me/${receiveNumber}?text=${encodeURIComponent(message)}`;
+        console.log(nom, num, sujet, mess);
+        
+            window.open(url, '_blank', 'noopener')
+
+        }   
+
+    </script>
+</body>
+</html>
